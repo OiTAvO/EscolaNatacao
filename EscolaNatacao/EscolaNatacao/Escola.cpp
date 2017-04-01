@@ -129,22 +129,25 @@ void main(void)
 				cSobrenome[i] = toupper(cSobrenome[i]);
 			//cout << vetSobrenomesAlunos[iIndRaia] << endl;
 			// loop para cálculo da mensalidade do aluno
-			for (i = 0, j = 0; i < nQtdeTotalDeRaias; i++)
+			for (i = 0, nQtdeParentes = 0; i < nQtdeTotalDeRaias; i++)
 			{
 				if (strcmp(cSobrenome, vetSobrenomesAlunos[i]) == 0)
-					j++;
+					nQtdeParentes++;
 			}
-			strcpy_s(vetSobrenomesAlunos[iIndRaia], sizeof(vetSobrenomesAlunos[iIndRaia]), cSobrenome);
+			//strcpy_s(vetSobrenomesAlunos[iIndRaia], sizeof(vetSobrenomesAlunos[iIndRaia]), cSobrenome);
 			// sabemos quantos parentes tem
 			//  Calcular o valor da mensalidade e armazenar no valor da
 			//		mensalidade dentro do vetor de mensalidades
 			// ???????????????????????????????
-			if (j >= 4)
-				j = 4;
-			vetMensalidades[iIndRaia] = (1-(j*0.05))*VALOR_MENSALIDADE;
-			//cout << vetSobrenomesAlunos[iIndRaia] << " e " << vetMensalidades[iIndRaia] << endl;
+			if (nQtdeParentes > 4)
+				nQtdeParentes = 4;
+			cout << nQtdeParentes << endl;
+			dValorMensalidade = ((100-(nQtdeParentes*VALOR_DESCONTO_POR_PARENTE))*VALOR_MENSALIDADE)/100;
+			vetMensalidades[iIndRaia] = dValorMensalidade;
+			//
 			vetRaiaLivreOcupada[iIndRaia] = true;						// indica raia ocupada
 			strcpy_s(&vetSobrenomesAlunos[iIndRaia][0], TAMANHO_SOBRENOME, cSobrenome);
+			//cout << vetSobrenomesAlunos[iIndRaia] << " e " << vetMensalidades[iIndRaia] << endl;
 			cout << "O aluno está matriculado no período " << vetNomesPeriodos[nPeriodo - 1] <<
 				" Raia: " << nRaia << endl;
 			PAUSA;
