@@ -162,6 +162,9 @@ void main(void)
 			//			apenas indicar que está raia deste periodo está livre. Caso contrário
 			//			voltar ao menu principal
 			break;								// cai fora do switch
+
+
+
 		case LISTAR_PERIODO:
 			//dddd
 			// <<<15>>> Pedir um período válido ou zero para cancelar a ação de listar
