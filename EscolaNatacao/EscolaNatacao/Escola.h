@@ -7,8 +7,8 @@ using namespace std;
 #define LIMPAR_TELA			system("cls")
 // Delimitação do programa
 #define QTDE_PERIODOS				3			// quantidade de períodos (1 - manhã, 2 - tarde e 3 - noite)
-#define QTDE_MAXIMA_RAIAS_PISCINA	4			//30 quantidade máxima de raias da piscina
-#define QTDE_MINIMA_RAIAS_PISCINA	3			//5 quantidade mínima de raias da piscina
+#define QTDE_MAXIMA_RAIAS_PISCINA	30			//30 quantidade máxima de raias da piscina
+#define QTDE_MINIMA_RAIAS_PISCINA	5			//5 quantidade mínima de raias da piscina
 #define PERIODO_MANHA		1					// período da manhã
 #define PERIODO_TARDE		2					// período da tarde
 #define PERIODO_NOITE		3					// período da noite
